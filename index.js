@@ -13,9 +13,12 @@ The function should:
   2. Create and return an object using the received values  
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem( name, price, category){
+    // objectName = {name, price, category}
+    // return objectName
 }
+
+  createMenuItem('test', 7, 'dinner' );
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Test your createMenuItems function by doing the following:
@@ -26,6 +29,11 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+console.log(createMenuItem("pizza",5,"lunch"));
+
+console.log(createMenuItem("Hot Dog",5,"Brunch"));
+
+console.log(createMenuItem("Ice Cream",5,"Second Lunch"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -41,13 +49,29 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-export const burger = {
+const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  // /*Your code here*/
+  schoolCustomers: ['teacher', 'student'],
+  publicCustomers: ['public'],
+    discount: function(person) {
+    for(let i = 0; i < burger.schoolCustomers.length; i++){
+      if(burger.schoolCustomers[i] === person){
+        return burger.price * .75
+      } 
+      
+      else if (burger.publicCustomers[i] === person) {
+        return burger.price * .9
+      }
+    }
+  }
 }
 
+
+console.log(burger.discount('teacher'))
+console.log(burger.discount('public'))
 
 
 ///////////////Reviews (MVP)///////////////////
