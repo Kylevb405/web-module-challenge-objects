@@ -14,11 +14,13 @@ The function should:
 */
 
 function createMenuItem( name, price, category){
-    // objectName = {name, price, category}
-    // return objectName
+    let newItem = {name, price, category}
+    return newItem
 }
 
-  createMenuItem('test', 7, 'dinner' );
+console.log(createMenuItem('taco', 8, 'lunch' ));
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Test your createMenuItems function by doing the following:
@@ -49,7 +51,7 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-const burger = {
+export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
@@ -70,8 +72,8 @@ const burger = {
 }
 
 
-console.log(burger.discount('teacher'))
-console.log(burger.discount('public'))
+console.log(burger.discount('student'))
+// console.log(burger.discount('public'))
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -91,6 +93,8 @@ Using the reviews array above:
   1. log only Julius' feedback to the console
 */
 
+console.log(reviews[5].feedback)
+
 
 
 
@@ -100,7 +104,11 @@ Using the reviews array above do the following:
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
+function addReview (array, name, rating, feedback) {
+  array.push({name, rating, feedback})
+}
 
+  console.log(addReview(reviews, 'Kyle', 5, 'Rather scrumpcious'))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following:
@@ -108,8 +116,7 @@ Reyna's feedback is missing! Use what you know to do the following:
   2. log the reviews array to the console to check your work
 */
 
-
-
+console.log(reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays')
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -122,10 +129,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}`  
 }
 
+getReviewByIndex(reviews,0)
 
   
 
@@ -140,8 +148,10 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  let index = array.length-1;
+
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}` 
 } 
 
 
